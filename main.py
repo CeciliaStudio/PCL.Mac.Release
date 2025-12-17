@@ -32,6 +32,7 @@ def download_artifact(url: str, name: str, digest: str) -> None:
     exit(1)
 
 def main() -> None:
+    os.chdir("run")
     print(f"PCL.Mac Release CLI {VERSION}")
 
     print(f"正在拉取 workflow runs...")
