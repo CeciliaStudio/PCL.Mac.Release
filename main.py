@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import urllib3
 
 load_dotenv()
-VERSION: str = os.environ.get("VERSION") or "v0.0.0"
 GITHUB_TOKEN: str = os.environ["GITHUB_TOKEN"]
 GITHUB_REPOSITORY: str = os.environ.get("GITHUB_REPOSITORY", "CeciliaStudio/PCL.Mac.Refactor")
 
@@ -54,7 +53,7 @@ def main() -> None:
     if not os.path.exists("run"):
         os.mkdir("run")
     os.chdir("run")
-    print(f"PCL.Mac Release CLI {VERSION}")
+    print(f"PCL.Mac Release CLI v0.0.1")
 
     print(f"正在拉取 workflow runs...")
     workflow_run: github.WorkflowRun = github.get_last_workflow_run(repo=GITHUB_REPOSITORY, token=GITHUB_TOKEN)
